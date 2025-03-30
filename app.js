@@ -7,6 +7,9 @@ const messages = require("./data/messages");
 
 const app = express();
 
+// url encoding for getting post response
+app.use(express.urlencoded({ extended: true }));
+
 // setup app properties for views
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -22,7 +25,10 @@ const links = [
 ]
 
 app.get("/", (req, res) => res.render("index", { links: links, messages: messages }));
-app.get("/new", (req, res) => res.render("new", { links: links }));
+app.use("/new", newRouter);
 
 const PORT = 6969;
 app.listen(PORT, () => console.log(`Message Board is live on http://localhost:${PORT}`));
+
+
+module.exports = links;

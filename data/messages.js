@@ -8,8 +8,8 @@ class Message {
 
 const messages = [
   {
-    text: "Hi There",
-    user: "Amando",
+    text: "I will go to Ireland",
+    user: "Monish Obaid",
     added: new Date()
   },
   {
