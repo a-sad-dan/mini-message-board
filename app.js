@@ -3,9 +3,9 @@ const path = require("node:path");
 
 const indexRouter = require("./routes");
 const newRouter = require("./routes/new");
+const messages = require("./data/messages");
 
 const app = express();
-
 
 // setup app properties for views
 app.set("views", path.join(__dirname, "views"));
@@ -21,7 +21,7 @@ const links = [
   { href: "/new", text: "Post a Message" },
 ]
 
-app.get("/", (req, res) => res.render("index", { links: links }));
+app.get("/", (req, res) => res.render("index", { links: links, messages: messages }));
 app.get("/new", (req, res) => res.render("new", { links: links }));
 
 const PORT = 6969;
