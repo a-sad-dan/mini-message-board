@@ -1,0 +1,1 @@
+## A message posting app using express, node, EJS via the MVC pattern.

@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: chartreuse;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(181, 255, 107);
+  text-decoration: underline;
+  text-underline-offset: 0.75rem;
+}
+
+
+/* Nav Styles */
+nav {
+  padding: 1.25rem;
+}
+
+nav>ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav>ul>li {
+  border: 1px solid chartreuse;
+  padding: 1rem 2rem;
+}
