@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require("node:path");
+const path = require("path");
 
 const indexRouter = require("./routes");
 const newRouter = require("./routes/new");
@@ -27,8 +27,11 @@ const links = [
 app.get("/", (req, res) => res.render("index", { links: links, messages: messages }));
 app.use("/new", newRouter);
 
-const PORT = 6969;
-app.listen(PORT, () => console.log(`Message Board is live on http://localhost:${PORT}`));
+const PORT = process.env.PORT || 3000;  // DomCloud assigns a port dynamically
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 
 
 module.exports = links;
